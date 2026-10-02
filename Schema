@@ -1,0 +1,27 @@
+-- AI Analytics Assistant: sample schema and seed data (PostgreSQL)
+-- Usage:
+--   createdb analytics
+--   psql -d analytics -f schema.sql
+
+DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers (
+    customer_id    SERIAL PRIMARY KEY,
+    customer_name  VARCHAR(100) NOT NULL,
+    monthly_spend  NUMERIC(10, 2) NOT NULL,
+    churn_status   VARCHAR(3) NOT NULL CHECK (churn_status IN ('Yes', 'No'))
+);
+
+INSERT INTO customers (customer_name, monthly_spend, churn_status) VALUES
+    ('Alice Johnson',   145.50, 'No'),
+    ('Bob Smith',        59.99, 'Yes'),
+    ('Carla Mendez',    210.00, 'No'),
+    ('David Lee',        35.00, 'Yes'),
+    ('Elena Petrova',   120.25, 'No'),
+    ('Frank Okafor',     80.00, 'Yes'),
+    ('Grace Kim',       175.75, 'No'),
+    ('Hassan Ali',       45.00, 'Yes'),
+    ('Isabel Costa',    130.00, 'No'),
+    ('Jack Turner',      99.99, 'No'),
+    ('Kavya Nair',      160.00, 'No'),
+    ('Liam O''Brien',    55.50, 'Yes');
