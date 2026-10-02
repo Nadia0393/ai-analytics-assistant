@@ -1,4 +1,9 @@
 fastapi
 uvicorn
 pydantic
+streamlit
+requests
+pandas
+psycopg2-binary
+python-dotenv
 openai
